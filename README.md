@@ -1,0 +1,1 @@
+# Szoftverteszt_VG5EHA_Laczik_Peter
