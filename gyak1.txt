@@ -1,0 +1,52 @@
+Teszt esetek:
+1. feladat
+A határértékek tesztelése a kedvezmények szempontjából:
+- 10000 alatt
+- 10000-től 24999- ig 5%
+- 25000-től 49999-ig 10%
+- 50000-től 15%
+
+Negatív érték lekezelése, nem lehet Negatív
+
+VIP kedvezménynél megfelelő százalékpont jár-e?
+
+A kedvezményes ár számítása
+
+2. feladat
+Ha az idő 15 perc vagy kevesebb, akkor ingyenes-e a parkolás?
+Ha felette van, akkor az eltelt idő meg van-e szorozva 600-zal?
+Ha hétvége van, akkor az árra teljesül-e az 50% kedvezmény?
+Ha VIP az ügyfél megfelelő-e a számítás és megkapja-e a 20% kedvezményt?
+5000Ft-e a maximális napi díj?
+Negatív-e a megadott idő?
+
+Szállítási díj feladat:
+ISO kód tesztelése kisbetűs esetre
+Express és nemzetközi szállítás díjazási sorrendje
+Express szállítási költsége a kódban nem 50%-kal nő, hanem csak 50-et adunk a költséghez
+5kg-os, 20kg-os súly nincs ellenőrzive
+Negatív tömeg nem lehet
+Hibás/üres országkódot is elfogad
+Leellenőrizni: NaN, null
+20000Ft határérték nem megfelelő
+magyar 20000 felett ingyenes,de express szállítással is?
+
+3. feladat
+A kód nem ellenőrzi a negatív és a 120 év feletti életkort, így azokra sem dob hibát
+Az age <= 6 magában foglalja a 6 éveseket is
+Az age > 65 kihagyja a 65 éveseket
+A diákkedvezmény egy külön if (isStudent) blokkban kapott helyet, így a már csökkentett árból ismét levon 20%-ot
+A kód 1.8-cal szoroz ahelyett, hogy hozzáadná a fix 800 Ft-ot 3D esetén
+
+4. feladat
+A kód egyáltalán nem vizsgálja a megengedett tartományokat, nem dob hibát
+A theory < 30 && practice < 20 azt jelenti, hogy csak akkor ad elégtelent, ha mindkét rész vizsgaeredménye a minimum alatt van
+A total <= 60 feltétel 60 pontra is 2-est ad
+A total <= 70 feltétel 70 pontra is 3-ast ad, holott az már 4-es.
+A total <= 85 feltétel 85 pontra is 4-est ad, de az már 5-ös kategória
+
+5. feladat
+Nincs lekezelve a 0 vagy negatív érték tömeg és méretek esetén, így a kód sosem adja vissza az INVALID eredményt.
+A "legfeljebb" >= helyett a kód szigorú kisebb (< 2 és < 30) relációkat használ.
+A méretek vizsgálatánál a kód || operátort használ, így elég, ha csak egy méret fér bele a 60 cm-be.
+A Small, Medium és Large formátum nem megfelelő, a kódban nagybetűvel van írva
