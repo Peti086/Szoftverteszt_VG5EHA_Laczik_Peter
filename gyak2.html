@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>QUnit példa</title>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/qunit@3.0.0-alpha.4/qunit/qunit.css">
+</head>
+
+<body>
+
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+
+<script src="https://unpkg.com/qunit@3.0.0-alpha.4/qunit/qunit.js"></script>
+
+<script>
+
+    function fizzBuzz(n) {
+      if (n % 15 === 0) return 'FizzBuzz';
+      if (n % 3 === 0) return 'Fizz';
+      if (n % 5 === 0) return 'Buzz';
+      return n;
+    }
+    
+    // Tesztelendő függvény
+    function square(x) {
+        return x * x;
+    }
+
+    // QUnit tesztek
+    QUnit.module("square függvény tesztelése");
+
+    QUnit.test("Pozitív szám négyzete", function(assert) {
+        assert.equal(square(5), 25);
+    });
+
+    QUnit.test("Negatív szám négyzete", function(assert) {
+        assert.equal(square(-4), 16);
+    });
+
+    QUnit.test("Nulla négyzete", function(assert) {
+        assert.equal(square(0), 0);
+    });
+
+    QUnit.module('FizzBuzz Logic');
+
+    QUnit.test('Evaluates standard numbers and multiples of 3, 5, and 15', assert => {
+    assert.strictEqual(fizzBuzz(1), 1);
+    assert.strictEqual(fizzBuzz(2), 2);
+  
+    assert.strictEqual(fizzBuzz(3), 'Fizz');
+    assert.strictEqual(fizzBuzz(6), 'Fizz');
+  
+    assert.strictEqual(fizzBuzz(5), 'Buzz');
+    assert.strictEqual(fizzBuzz(10), 'Buzz');
+  
+    assert.strictEqual(fizzBuzz(15), 'FizzBuzz');
+    assert.strictEqual(fizzBuzz(30), 'FizzBuzz');
+    });
+
+</script>
+
+</body>
+</html>
